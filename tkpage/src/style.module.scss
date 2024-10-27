@@ -1,4 +1,6 @@
 .component {
-  background-color: green;
-  font-family: "Hanam Daum Title";
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

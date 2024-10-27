@@ -1,0 +1,39 @@
+.component {
+  width: 100%;
+  height: 86px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.menuButton {
+  position: absolute;
+  top: 50%;
+  left: 34px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.homeButton {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  cursor: pointer;
+
+  > h2 {
+    color: #302a6e;
+  }
+
+  > .title {
+    margin-left: 11px;
+    margin-top: 5px;
+  }
+
+  > .sub {
+    margin-left: 7px;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+}

@@ -5,11 +5,53 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
-  > img {
-    height: 100%; // 화면 세로에 맞추어 꽉 채움
-    width: auto; // 세로에 맞춰 가로 크기 비율 조정
-    max-width: none; // 원본 크기 제한 제거
-    object-fit: cover; // 필요 시 비율 유지하여 잘림 발생
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: opacity 1s ease-in-out; // 애니메이션 효과
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    object-fit: cover;
+  }
+}
+
+.fadeIn {
+  opacity: 1; // 현재 이미지 보이기
+}
+
+.fadeOut {
+  opacity: 0; // 현재 이미지 숨기기
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &.active {
+    background-color: #fff;
   }
 }

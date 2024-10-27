@@ -1,10 +1,64 @@
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import mainImage1 from "../images/main-image1.webp";
+import mainImage2 from "../images/main-image2.webp";
+
+const images = [mainImage1, mainImage2];
 
 export function Main() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fadeToNext();
+    }, 5000); // 5초 간격
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const fadeToNext = () => {
+    if (isFading) return; // 애니메이션 진행 중일 경우 함수 종료
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex((currentIndex + 1) % images.length);
+      setIsFading(false);
+    }, 700); // 애니메이션 시간
+  };
+
+  const handleDotClick = (index: number) => {
+    if (isFading) {
+      setCurrentIndex(index); // 도트 클릭 시 바로 이미지 변경
+      setIsFading(false); // 기존 애니메이션 중단
+    } else {
+      setIsFading(true); // 새로 애니메이션 시작
+      setTimeout(() => {
+        setCurrentIndex(index);
+        setIsFading(false);
+      }, 700); // 애니메이션 시간
+    }
+  };
+
   return (
     <div className={styles.component}>
-      <img src={mainImage1} alt="main1" />
+      <div
+        className={`${styles.slider} ${
+          isFading ? styles.fadeOut : styles.fadeIn
+        }`}
+      >
+        <img src={images[currentIndex]} alt={`main${currentIndex + 1}`} />
+      </div>
+      <div className={styles.dots}>
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`${styles.dot} ${
+              index === currentIndex ? styles.active : ""
+            }`}
+            onClick={() => handleDotClick(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

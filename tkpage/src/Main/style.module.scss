@@ -1,5 +1,15 @@
 .component {
   width: 100%;
   flex: 1;
-  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  > img {
+    height: 100%; // 화면 세로에 맞추어 꽉 채움
+    width: auto; // 세로에 맞춰 가로 크기 비율 조정
+    max-width: none; // 원본 크기 제한 제거
+    object-fit: cover; // 필요 시 비율 유지하여 잘림 발생
+  }
 }

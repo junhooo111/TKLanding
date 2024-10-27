@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  font-family: "Hanam Daum Body";
+  margin: 0;
+}
+
 h2 {
   font-family: "Hanam Daum Title";
 }

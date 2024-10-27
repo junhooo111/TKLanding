@@ -1,0 +1,22 @@
+.component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 45px;
+
+  > h2 {
+    font-size: 30px;
+    color: #302a6e;
+  }
+
+  > .subLine {
+    width: 100%;
+    height: 3px;
+    background-color: #d1d2d4;
+  }
+
+  > .sub {
+    font-size: 13px;
+  }
+}

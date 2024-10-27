@@ -1,0 +1,51 @@
+.component {
+  width: 100%;
+  height: 86px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+
+  &.opened {
+    background-color: #4b4b4b;
+  }
+}
+
+.menuButton {
+  position: absolute;
+  top: 50%;
+  left: 34px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.homeButton {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  cursor: pointer;
+
+  > h2 {
+    color: #302a6e;
+  }
+
+  > .title {
+    width: 133px;
+    margin-left: 11px;
+    margin-top: 5px;
+  }
+
+  > .sub {
+    margin-left: 7px;
+    margin-top: 6px;
+    font-size: 24px;
+  }
+
+  &.opened {
+    > .sub {
+      color: #fff;
+    }
+  }
+}

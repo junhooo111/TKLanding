@@ -1,0 +1,59 @@
+.component {
+  width: 100%;
+  height: 94px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  gap: 10px;
+
+  > .title {
+    font-size: 10px;
+  }
+
+  > .detail,
+  .address {
+    font-size: 8px;
+    color: #404040;
+  }
+
+  > .address {
+    margin-top: -5px;
+  }
+}
+
+.markWrapper {
+  margin-right: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  > img {
+    width: 50px;
+    height: 50px;
+  }
+
+  > .jas {
+    height: 56px;
+  }
+
+  > .venture {
+    height: 42px;
+  }
+}
+
+.copyright {
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #a0a0a0;
+}

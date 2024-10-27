@@ -1,0 +1,43 @@
+.component {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  width: calc(100% - 340px);
+  padding: 66px 170px 0 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+
+.title {
+  font-size: 30px;
+  color: #302a6e;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  gap: 33px;
+
+  > .map {
+    width: 783px;
+    height: 400px;
+  }
+
+  > .atom {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-left: 10px;
+
+    > h2 {
+      font-size: 25px;
+    }
+
+    > p {
+      font-size: 13px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.component {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 86px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  overflow: hidden;
+  transition: height 0.4s ease;
+
+  &.open {
+    height: calc(100vh - 86px - 94px);
+  }
+}
+
+.menuWrapper {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 350px;
+  color: #fff;
+}
+
+.menuContents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  > .main {
+    font-size: 24px;
+  }
+
+  > .sub {
+    font-family: "Hanam Daum Title";
+    font-size: 21px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: unset;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .subLine {
+    width: 164px;
+    height: 1px;
+    background-color: #fff;
+    margin: -20px 0 -5px 0;
+  }
+}

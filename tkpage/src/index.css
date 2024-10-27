@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: "Hanam Daum Body", "Hanam Daum Title", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-family: "Hanam Daum Body";
+  margin: 0;
+}
+
+h2 {
+  font-family: "Hanam Daum Title";
+  margin: 0;
+}
+
+button {
+  background-color: unset;
+  border: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: "Hanam Daum Body";
+  src: url("../public/fonts/HANAMDAUM_Body.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hanam Daum Title";
+  src: url("../public/fonts/HANAMDAUM_Title.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

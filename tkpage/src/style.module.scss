@@ -44,8 +44,11 @@
   }
 
   > .sub {
+    font-family: "Hanam Daum Title";
     font-size: 21px;
     cursor: pointer;
+    color: #fff;
+    text-decoration: unset;
 
     &:hover {
       text-decoration: underline;

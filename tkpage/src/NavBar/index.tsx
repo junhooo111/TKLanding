@@ -7,9 +7,11 @@ import menuOpenIcon from "../icons/menu-open.webp";
 import { useRecoilState } from "recoil";
 import { isMenuOpened } from "../states/main";
 import clsx from "clsx";
+import { useNavigate } from "react-router-dom";
 
 export function NavBar() {
   const [isOpened, setIsOpened] = useRecoilState(isMenuOpened);
+  const navigate = useNavigate();
 
   return (
     <div className={clsx(styles.component, isOpened && styles.opened)}>
@@ -19,7 +21,13 @@ export function NavBar() {
       >
         <img src={isOpened ? menuOpenIcon : menuIcon} alt="menu" />
       </button>
-      <button className={clsx(styles.homeButton, isOpened && styles.opened)}>
+      <button
+        className={clsx(styles.homeButton, isOpened && styles.opened)}
+        onClick={() => {
+          setIsOpened(false);
+          navigate("/");
+        }}
+      >
         <img src={logoImage} alt="logo" />
         <img
           className={styles.title}

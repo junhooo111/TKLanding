@@ -16,8 +16,6 @@ export function NavBar() {
 
   const isNotHome = location.pathname !== "/";
 
-  console.log(isNotHome);
-
   return (
     <div
       className={clsx(

@@ -16,7 +16,7 @@ export function OtherFacility() {
       />
       <div className={styles.imageWrapper}>
         <div className={styles.top}>
-          <img src={otherImage1} alt="other1" />
+          <img className={styles.firstImage} src={otherImage1} alt="other1" />
           <img src={otherImage2} alt="other2" />
           <img src={otherImage3} alt="other3" />
         </div>

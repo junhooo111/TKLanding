@@ -8,6 +8,39 @@
   flex-direction: column;
   align-items: center;
   gap: 45px;
+
+  @media screen and (max-width: 1000px) {
+    width: 100vw;
+    padding: 20px;
+    gap: 10px;
+    box-sizing: border-box;
+
+    .contents {
+      width: 100%;
+      gap: 10px;
+      margin: 0;
+
+      > .map {
+        width: 100%;
+        height: 250px;
+      }
+
+      > .atom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+
+        > h2 {
+          font-size: 16px;
+        }
+
+        > p {
+          font-size: 10px;
+        }
+      }
+    }
+  }
 }
 
 .title {

@@ -12,6 +12,7 @@ import { AirConditioner } from "./AirConditioner";
 import { ConstantFacility } from "./ConstantFacility";
 import { CleanRoom } from "./CleanRoom";
 import { OtherFacility } from "./OtherFacility";
+import { useEffect, useState } from "react";
 
 const companyInfoMenu = {
   title: "회사소개",
@@ -34,13 +35,33 @@ const businessAreasMenu = {
 
 function App() {
   const [isOpened, setIsOpened] = useRecoilState(isMenuOpened);
+  const [vh, setVh] = useState(window.innerHeight);
+
+  // 동적 vh 계산
+  useEffect(() => {
+    const handleResize = () => {
+      setVh(window.innerHeight); // 현재 화면 높이 갱신
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleLinkClick = () => {
     setIsOpened(false);
   };
 
   return (
-    <div className={styles.component}>
+    <div
+      className={styles.component}
+      style={{
+        height: `${vh}px`,
+      }}
+    >
       <NavBar />
       <Routes>
         <Route path="/" element={<Main />} />

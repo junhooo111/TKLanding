@@ -21,6 +21,13 @@
   &.open {
     height: calc(100vh - 86px - 94px);
   }
+
+  @media screen and (max-width: 1000px) {
+    top: 60px;
+    &.open {
+      height: calc(100vh - 60px - 80px);
+    }
+  }
 }
 
 .menuWrapper {

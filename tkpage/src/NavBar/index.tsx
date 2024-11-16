@@ -39,7 +39,7 @@ export function NavBar() {
           navigate("/");
         }}
       >
-        <img src={logoImage} alt="logo" />
+        <img className={styles.logoImage} src={logoImage} alt="logo" />
         <img
           className={styles.title}
           src={isOpened || isNotHome ? titleOpenImage : titleImage}

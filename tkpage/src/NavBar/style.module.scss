@@ -1,6 +1,6 @@
 .component {
   width: 100%;
-  height: 60px;
+  height: 86px;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -10,6 +10,10 @@
 
   &.opened {
     background-color: #4b4b4b;
+  }
+
+  @media screen and (max-width: 1000px) {
+    height: 60px;
   }
 }
 

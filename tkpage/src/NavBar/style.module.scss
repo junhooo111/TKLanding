@@ -11,6 +11,10 @@
   &.opened {
     background-color: #4b4b4b;
   }
+
+  @media screen and (max-width: 1000px) {
+    height: 60px;
+  }
 }
 
 .menuButton {
@@ -19,6 +23,15 @@
   left: 34px;
   transform: translateY(-50%);
   cursor: pointer;
+
+  @media screen and (max-width: 1000px) {
+    left: 10px;
+
+    > img {
+      width: 20px;
+      height: auto;
+    }
+  }
 }
 
 .homeButton {
@@ -46,6 +59,26 @@
   &.opened {
     > .sub {
       color: #fff;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    > .logoImage {
+      width: 20px;
+      height: auto;
+    }
+
+    > .title {
+      margin-top: 2px;
+      margin-left: 6px;
+      width: 90px;
+      height: auto;
+    }
+
+    .sub {
+      margin-left: 4px;
+      margin-top: 4px;
+      font-size: 16px;
     }
   }
 }

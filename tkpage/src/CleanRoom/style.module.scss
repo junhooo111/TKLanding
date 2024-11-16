@@ -11,10 +11,28 @@
 
   > img {
     margin-bottom: 50px;
+    width: 735px;
+    height: 227px;
   }
-}
 
-.title {
-  font-size: 30px;
-  color: #302a6e;
+  > .firstImage {
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 100vw;
+    padding: 20px;
+    gap: 10px;
+    box-sizing: border-box;
+
+    > .firstImage {
+      margin-top: 20px;
+    }
+
+    > img {
+      width: 100%;
+      height: auto;
+      margin: 20px 0 0 0;
+    }
+  }
 }

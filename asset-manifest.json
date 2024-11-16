@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TKLanding/static/css/main.7d868e5e.css",
-    "main.js": "/TKLanding/static/js/main.8dcbca0a.js",
+    "main.js": "/TKLanding/static/js/main.7bda2baa.js",
     "static/js/453.909e650e.chunk.js": "/TKLanding/static/js/453.909e650e.chunk.js",
     "static/media/main-image4.jpg": "/TKLanding/static/media/main-image4.07e318f307370d3e58c7.jpg",
     "static/media/main-image3.jpg": "/TKLanding/static/media/main-image3.db13a3c34366e92b2c87.jpg",
@@ -37,11 +37,11 @@
     "static/media/menu.webp": "/TKLanding/static/media/menu.11df7b80b9b34b716cc7.webp",
     "static/media/menu-open.webp": "/TKLanding/static/media/menu-open.f401b9aa206d0122e435.webp",
     "main.7d868e5e.css.map": "/TKLanding/static/css/main.7d868e5e.css.map",
-    "main.8dcbca0a.js.map": "/TKLanding/static/js/main.8dcbca0a.js.map",
+    "main.7bda2baa.js.map": "/TKLanding/static/js/main.7bda2baa.js.map",
     "453.909e650e.chunk.js.map": "/TKLanding/static/js/453.909e650e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d868e5e.css",
-    "static/js/main.8dcbca0a.js"
+    "static/js/main.7bda2baa.js"
   ]
 }

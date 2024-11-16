@@ -9,7 +9,11 @@
   align-items: center;
   gap: 67px;
 
-  > img {
-    margin-bottom: 50px;
+  > .title {
+    width: 900px;
+  }
+
+  > .historyImage {
+    margin: 0 0 50px -120px;
   }
 }

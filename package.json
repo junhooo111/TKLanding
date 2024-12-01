@@ -2,7 +2,7 @@
   "name": "tkpage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://junhooo111.github.io/TKLanding/",
+  "homepage": "https://bejewelled-kashata-1a4ec6.netlify.app/TKLanding/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

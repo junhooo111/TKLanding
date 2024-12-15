@@ -28,7 +28,7 @@ export function Footer() {
       </div>
       <p
         className={styles.copyright}
-      >{`Copytightⓒ 대경공조㈜  All rights reserved`}</p>
+      >{`Copyrightⓒ 대경공조㈜  All rights reserved`}</p>
     </div>
   );
 }

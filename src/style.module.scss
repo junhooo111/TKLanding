@@ -19,7 +19,7 @@
   transition: height 0.4s ease;
 
   &.open {
-    height: calc(100vh - 86px - 94px);
+    height: calc(100vh - 86px - 90px);
   }
 
   @media screen and (max-width: 1000px) {

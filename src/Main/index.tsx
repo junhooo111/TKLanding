@@ -15,7 +15,7 @@ export function Main() {
   useEffect(() => {
     const interval = setInterval(() => {
       fadeToNext();
-    }, 5000); // 5초 간격
+    }, 3000); // 3초 간격
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -26,7 +26,7 @@ export function Main() {
     setTimeout(() => {
       setCurrentIndex((currentIndex + 1) % images.length);
       setIsFading(false);
-    }, 700); // 애니메이션 시간
+    }, 500); // 애니메이션 시간
   };
 
   const handleDotClick = (index: number) => {
@@ -38,7 +38,7 @@ export function Main() {
       setTimeout(() => {
         setCurrentIndex(index);
         setIsFading(false);
-      }, 700); // 애니메이션 시간
+      }, 500); // 애니메이션 시간
     }
   };
 

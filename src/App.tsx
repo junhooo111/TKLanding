@@ -13,18 +13,20 @@ import { ConstantFacility } from "./ConstantFacility";
 import { CleanRoom } from "./CleanRoom";
 import { OtherFacility } from "./OtherFacility";
 import { useEffect, useState } from "react";
+import { Certification } from "./Certification";
 
 const companyInfoMenu = {
   title: "회사소개",
   items: [
     { name: "인사말", path: "/intro" },
     { name: "연혁", path: "/history" },
+    { name: "특허 및 인증서", path: "/certification" },
     { name: "오시는 길", path: "/location" },
   ],
 };
 
 const businessAreasMenu = {
-  title: "사업분야",
+  title: "제품소개",
   items: [
     { name: "공기조화기", path: "/air-conditioner" },
     { name: "항온항습기", path: "/constant-temperature-and-humidity" },
@@ -75,6 +77,7 @@ function App() {
         />
         <Route path="/clean-room" element={<CleanRoom />} />
         <Route path="/other-facilities" element={<OtherFacility />} />
+        <Route path="/certification" element={<Certification />} />
       </Routes>
       <div className={`${styles.overlay} ${isOpened ? styles.open : ""}`}>
         <div className={styles.menuWrapper}>

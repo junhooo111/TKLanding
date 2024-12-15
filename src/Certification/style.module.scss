@@ -1,0 +1,62 @@
+.component {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  width: calc(100% - 340px);
+  padding: 66px 170px 50px 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+
+  @media screen and (max-width: 1000px) {
+    width: 100vw;
+    padding: 20px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+}
+
+.title {
+  font-size: 30px;
+  color: #302a6e;
+}
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  gap: 70px;
+
+  @media screen and (max-width: 1000px) {
+    padding: 0;
+    gap: 40px;
+  }
+}
+
+.imageRow {
+  display: flex;
+  gap: 70px;
+  width: 100%;
+
+  .wrapper {
+    width: 29%;
+    border: 1px solid rgba(209, 210, 212, 0.5);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    padding: 0;
+    gap: 20px;
+
+    .wrapper {
+      width: 32%;
+    }
+  }
+}

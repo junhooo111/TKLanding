@@ -4,6 +4,7 @@ import jasImage from "../images/jas-anz.webp";
 import ventureImage from "../images/venture.webp";
 
 export function Footer() {
+  // test
   return (
     <div className={styles.component}>
       <div className={styles.infoWrapper}>

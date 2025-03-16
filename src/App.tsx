@@ -14,6 +14,7 @@ import { CleanRoom } from "./CleanRoom";
 import { OtherFacility } from "./OtherFacility";
 import { useEffect, useState } from "react";
 import { Certification } from "./Certification";
+import { SubMenuTooltip } from "./SubMenuTooltip";
 
 const companyInfoMenu = {
   title: "회사소개",
@@ -38,32 +39,60 @@ const businessAreasMenu = {
 function App() {
   const [isOpened, setIsOpened] = useRecoilState(isMenuOpened);
   const [vh, setVh] = useState(window.innerHeight);
+  const [hoveredItem, setHoveredItem] = useState<string | undefined>(undefined);
+  const [tooltipPosition, setTooltipPosition] = useState<{ left: number; top: number } | null>(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
 
-  // 동적 vh 계산
+  // 반응형 대응: 창 크기 변경 감지
   useEffect(() => {
     const handleResize = () => {
-      setVh(window.innerHeight); // 현재 화면 높이 갱신
+      setVh(window.innerHeight);
+      setIsMobile(window.innerWidth <= 1000);
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleMouseEnter = (event: React.MouseEvent<HTMLAnchorElement>, itemName: string) => {
+    if (isMobile) return; // 모바일에서는 hover 이벤트 무시
+
+    setHoveredItem(itemName);
+    const rect = event.currentTarget.getBoundingClientRect();
+    setTooltipPosition({ left: rect.left, top: rect.top });
+  };
+
+  const handleMouseLeave = () => {
+    if (isMobile) return; // 모바일에서는 hover 이벤트 무시
+    setHoveredItem(undefined);
+    setTooltipPosition(null);
+  };
+
+  const handleItemClick = (event: React.MouseEvent<HTMLAnchorElement>, itemName: string) => {
+    if (!isMobile) return; // 데스크톱 환경에서는 클릭 이벤트 무시
+
+    event.preventDefault(); // 링크 이동 방지
+    if (hoveredItem === itemName) {
+      // 이미 선택된 아이템이면 닫기
+      setHoveredItem(undefined);
+      setTooltipPosition(null);
+    } else {
+      // 새로운 아이템 열기
+      setHoveredItem(itemName);
+      const rect = event.currentTarget.getBoundingClientRect();
+      setTooltipPosition({ left: rect.left, top: rect.top });
+    }
+  };
 
   const handleLinkClick = () => {
     setIsOpened(false);
   };
 
   return (
-    <div
-      className={styles.component}
-      style={{
-        height: `${vh}px`,
-      }}
-    >
+    <div className={styles.component} style={{ height: `${vh}px` }}>
       <NavBar />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -71,10 +100,7 @@ function App() {
         <Route path="/history" element={<History />} />
         <Route path="/location" element={<Location />} />
         <Route path="/air-conditioner" element={<AirConditioner />} />
-        <Route
-          path="/constant-temperature-and-humidity"
-          element={<ConstantFacility />}
-        />
+        <Route path="/constant-temperature-and-humidity" element={<ConstantFacility />} />
         <Route path="/clean-room" element={<CleanRoom />} />
         <Route path="/other-facilities" element={<OtherFacility />} />
         <Route path="/certification" element={<Certification />} />
@@ -89,7 +115,11 @@ function App() {
                 to={item.path}
                 key={item.name}
                 className={styles.sub}
-                onClick={handleLinkClick}
+                onClick={(e) => {
+                  handleLinkClick();
+                  handleItemClick(e, item.name);
+                }}
+                onMouseEnter={(e) => handleMouseEnter(e, item.name)}
               >
                 {item.name}
               </Link>
@@ -103,7 +133,15 @@ function App() {
                 to={item.path}
                 key={item.name}
                 className={styles.sub}
-                onClick={handleLinkClick}
+                onClick={(e) => {
+                  if (item.name === "공기조화기") {
+                    handleItemClick(e, item.name);
+                    e.preventDefault(); // 클릭 이벤트 막기
+                    return;
+                  }
+                  handleLinkClick();
+                }}
+                onMouseEnter={(e) => handleMouseEnter(e, item.name)}
               >
                 {item.name}
               </Link>
@@ -112,6 +150,9 @@ function App() {
         </div>
       </div>
       <Footer />
+      {hoveredItem !== undefined && tooltipPosition && (
+        <SubMenuTooltip itemName={hoveredItem} position={tooltipPosition} onClose={handleMouseLeave} />
+      )}
     </div>
   );
 }

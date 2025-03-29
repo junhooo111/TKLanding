@@ -13,13 +13,13 @@ export function Main() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fadeToNext();
-    }, 3000); // 3초 간격
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     fadeToNext();
+  //   }, 3000); // 3초 간격
 
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+  //   return () => clearInterval(interval);
+  // }, [currentIndex]);
 
   const fadeToNext = () => {
     if (isFading) return; // 애니메이션 진행 중일 경우 함수 종료

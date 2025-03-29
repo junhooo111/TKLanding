@@ -1,29 +1,33 @@
-import { TitleComponent } from "../common/components/TitleComponent";
+import clsx from "clsx";
 import styles from "./style.module.scss";
-import otherImage1 from "../images/other1.png";
-import otherImage2 from "../images/other2.png";
-import otherImage3 from "../images/other3.png";
-import otherImage4 from "../images/other4.png";
-import otherImage5 from "../images/other5.png";
-import otherImage6 from "../images/other6.png";
+
+const subMenuList = [
+  "기타설비",
+];
 
 export function OtherFacility() {
   return (
     <div className={styles.component}>
-      <TitleComponent
-        label="기타설비"
-        sub="제습기 / VOC / 공조기 제작 및 설치 / 해외공사"
-      />
-      <div className={styles.imageWrapper}>
-        <div className={styles.top}>
-          <img className={styles.firstImage} src={otherImage1} alt="other1" />
-          <img src={otherImage2} alt="other2" />
-          <img src={otherImage3} alt="other3" />
+      <div className={styles.subMenu}>
+        {subMenuList.map((menu) => {
+          return (
+            <button
+              className={styles.activeMenu}
+            >{menu}</button>
+          );
+        })}
+      </div>
+      <div className={styles.routeWrapper}>
+        <p>{`HOME`}</p>
+        <p>{`>`}</p>
+        <p className={styles.bold}>{`기타설비`}</p>
+      </div>
+      <div className={styles.contents}>
+        <div className={clsx(styles.box, styles.border)}>
+          <p>{`HEPA/ULPA 필터`}</p>
         </div>
-        <div className={styles.bottom}>
-          <img src={otherImage4} alt="other4" />
-          <img src={otherImage5} alt="other5" />
-          <img src={otherImage6} alt="other6" />
+        <div className={styles.box}>
+          <p>{`패스박스/에어락`}</p>
         </div>
       </div>
     </div>

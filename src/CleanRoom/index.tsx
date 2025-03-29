@@ -7,8 +7,8 @@ export function CleanRoom() {
   return (
     <div className={styles.component}>
       <TitleComponent
-        label="Clean Room 설비_외조기(OAC)"
-        sub="Clean room의 온도와 습도, Particle을 일정 수준으로 관리하기 위해 외부 공기를 최적의 수준으로 만들어 공급하는 장치로 OAC(Outside Air Conditioner) 가 있다."
+        label="OAC(Outside Air Conditioner)"
+        sub="Clean room 내부의 온도와 습도, Particle을 일정 수준으로 관리하기 위한 설비로 외부 공기를 최적의 수준으로 만들어 공급한다."
       />
       <img
         className={styles.firstImage}

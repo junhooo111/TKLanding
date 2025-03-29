@@ -100,6 +100,7 @@ function App() {
         <Route path="/history" element={<History />} />
         <Route path="/location" element={<Location />} />
         <Route path="/air-conditioner" element={<AirConditioner />} />
+        <Route path="/air-conditioner/:subMenu" element={<AirConditioner />} />
         <Route path="/constant-temperature-and-humidity" element={<ConstantFacility />} />
         <Route path="/clean-room" element={<CleanRoom />} />
         <Route path="/other-facilities" element={<OtherFacility />} />
@@ -117,9 +118,9 @@ function App() {
                 className={styles.sub}
                 onClick={(e) => {
                   handleLinkClick();
-                  handleItemClick(e, item.name);
+                  // handleItemClick(e, item.name);
                 }}
-                onMouseEnter={(e) => handleMouseEnter(e, item.name)}
+                // onMouseEnter={(e) => handleMouseEnter(e, item.name)}
               >
                 {item.name}
               </Link>
@@ -134,14 +135,14 @@ function App() {
                 key={item.name}
                 className={styles.sub}
                 onClick={(e) => {
-                  if (item.name === "공기조화기") {
-                    handleItemClick(e, item.name);
-                    e.preventDefault(); // 클릭 이벤트 막기
-                    return;
-                  }
+                  // if (item.name === "공기조화기") {
+                  //   handleItemClick(e, item.name);
+                  //   e.preventDefault(); // 클릭 이벤트 막기
+                  //   return;
+                  // }
                   handleLinkClick();
                 }}
-                onMouseEnter={(e) => handleMouseEnter(e, item.name)}
+                // onMouseEnter={(e) => handleMouseEnter(e, item.name)}
               >
                 {item.name}
               </Link>
@@ -150,9 +151,9 @@ function App() {
         </div>
       </div>
       <Footer />
-      {hoveredItem !== undefined && tooltipPosition && (
+      {/* {hoveredItem !== undefined && tooltipPosition && (
         <SubMenuTooltip itemName={hoveredItem} position={tooltipPosition} onClose={handleMouseLeave} />
-      )}
+      )} */}
     </div>
   );
 }

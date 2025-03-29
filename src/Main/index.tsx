@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
-import mainImage1 from "../images/main-image1.jpg";
-import mainImage2 from "../images/main-image2.jpg";
-import mainImage3 from "../images/main-image3.jpg";
-import mainImage4 from "../images/main-image4.jpg";
-import mainImage5 from "../images/main-image5.jpg";
+// import mainImage1 from "../images/main-image1.jpg";
+// import mainImage2 from "../images/main-image2.jpg";
+// import mainImage3 from "../images/main-image3.jpg";
+// import mainImage4 from "../images/main-image4.jpg";
+// import mainImage5 from "../images/main-image5.jpg";
+import mainImage1 from "../images/main.jpg"
 
-const images = [mainImage1, mainImage2, mainImage3, mainImage4, mainImage5];
+const images = [mainImage1];
 
 export function Main() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fadeToNext();
-    }, 3000); // 3초 간격
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     fadeToNext();
+  //   }, 3000); // 3초 간격
 
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+  //   return () => clearInterval(interval);
+  // }, [currentIndex]);
 
   const fadeToNext = () => {
     if (isFading) return; // 애니메이션 진행 중일 경우 함수 종료

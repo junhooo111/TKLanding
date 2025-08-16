@@ -5,9 +5,11 @@ import styles from "./style.module.scss";
 // import mainImage3 from "../images/main-image3.jpg";
 // import mainImage4 from "../images/main-image4.jpg";
 // import mainImage5 from "../images/main-image5.jpg";
-import mainImage1 from "../images/main.jpg"
+// import mainImage1 from "../images/main.jpg"
+import mainNewImage1 from "../images/main-new1.jpg"
+import mainNewImage2 from "../images/main-new2.jpg"
 
-const images = [mainImage1];
+const images = [mainNewImage1, mainNewImage2];
 
 export function Main() {
   const [currentIndex, setCurrentIndex] = useState(0);
